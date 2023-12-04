@@ -31,7 +31,7 @@ const PaymentForm = ({ checkoutToken, shippingData, backStep, onCaptureCheckout,
                     postal_zip_code: shippingData.zip, 
                     country: shippingData.shippingCountry, 
                 }, 
-                fulfillment: { shipping_method: sjippingData.shippingOption },
+                fulfillment: { shipping_method: shippingData.shippingOption },
                 payment: {
                     gateway: 'stripe', 
                     stripe: {

@@ -57,7 +57,7 @@ const AddressForm = ({ checkoutToken, next }) => {
         <>
             <Typography variant="h6" gutterBottom>Shipping Address</Typography>
             <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit((date) => next({ ...data, shippingCountry, shippingSubdivision, shippingOption }))}>
+                <form onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingSubdivision, shippingOption }))}>
                     <Grid container spacing={3}>
                         <FormInput name='firstName' label='First name' />
                         <FormInput name='lastName' label='Last name' />
@@ -85,7 +85,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <InputLabel>Shipping Options</InputLabel>
-                            <Select value={shippingOption} fullWidth onChange={(e.target.value)}>
+                            <Select value={shippingOption} fullWidth onChange={(e) => setShippingOption(e.target.value)}>
                                 {options.map((option) => (
                                     <MenuItem key={option.id} value={option.id}>{option.label}</MenuItem>
                                 ))}
